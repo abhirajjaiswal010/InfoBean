@@ -28,11 +28,39 @@ if a>b:
                 else:
                     high=f 
             else:
-                high=e 
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
         else:
-            high=d 
+            if d>e:
+                high=d
+            else:
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
     else:
-        high=c 
+        if c>d:
+            if c>e:
+                if c>f:
+                    high=c 
+                else:
+                    high=f 
+            else:
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
+        else:
+            if d>e:
+                high=d
+            else:
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
+        
 
 else:
     if b>c:
