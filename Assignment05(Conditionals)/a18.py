@@ -23,33 +23,63 @@ if a>b:
     if a>c:
         if a>d:
             if a>e:
-                high=a
+                if a>f:
+                    high=a
+                else:
+                    high=f 
             else:
-                high=e
+                high=e 
         else:
-            high=d
+            high=d 
     else:
         high=c 
-    
+
 else:
     if b>c:
         if b>d:
             if b>e:
-                high=b 
+                if b>f:
+                    high=b 
+                else:
+                    high=f 
             else:
-                high=e
+                if e>f:
+                    high=e 
+                else:
+                    high=f
         else:
-            high=d
+            if d>e:
+                high=d
+            else:
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
     else:
         if c>d:
             if c>e:
-                high=c
+                if c>f:
+                    high=c
+                else:
+                    high=f 
             else:
-                high=e 
+                if e>f:
+                    high=e 
+                else:
+                    high=f
         else:
             if d>e:
-                high=d 
+                if d>f:
+                    high=d
+                else:
+                    high=f 
             else:
-                high=e
-
+                if e>f:
+                    high=e 
+                else:
+                    high=f 
+               
+                       
+                    
+    
 print(f"Highest Stock : {high}")
