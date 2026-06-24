@@ -1,4 +1,4 @@
-'''
+/'''
 
  A smart electricity monitoring system categorizes usage levels for better energy management.
 The system should take the number of units consumed as input. If the units are greater than or equal to 100, then check further.
