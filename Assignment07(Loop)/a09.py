@@ -13,10 +13,16 @@ Output: Not All Even
 
 n=int(input("Enter The Number : "))
 sum=0
+isOdd=False
 
 while n>0:
     d=n%10
-    sum+=d
+    if d%2==1:
+        isOdd=True
+    else:
+        isOddd=False
+        
     n//=10
+        
    
-print("All Even" if sum%2==0 else "Not All Even")
+print("Not All Even" if isOdd else "All Even")
