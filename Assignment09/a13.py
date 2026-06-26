@@ -29,8 +29,9 @@ mark=""
 
 if amount >= 50000:
     location = input("Enter Location (international/domestic): ").lower()
+    transactions = int(input("Enter Transaction Count: "))
     if location=="international":
-        transactions = int(input("Enter Transaction Count: "))
+       
         if device=="new":
             if transactions>3:
                 mark="high risk  (Block)"
