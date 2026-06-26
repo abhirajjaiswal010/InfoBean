@@ -20,7 +20,38 @@ Output:
 Risk Level = High Risk (Blocked)
 '''
 amount = int(input("Enter Transaction Amount: "))
-location = input("Enter Location (international/domestic): ").lower()
+# location = input("Enter Location (international/domestic): ").lower()
 device = input("Enter Device (new/old): ").lower()
-transactions = int(input("Enter Transaction Count: "))
-unusual_activity = input("Is there Unusual Activity? (yes/no): ").lower()
+# transactions = int(input("Enter Transaction Count: "))
+
+mark=""
+
+
+if amount >= 50000:
+    location = input("Enter Location (international/domestic): ").lower()
+    if location=="international":
+        transactions = int(input("Enter Transaction Count: "))
+        if device=="new":
+            if transactions>3:
+                mark="high risk  (Block)"
+            else:
+                mark="medium risk "
+        else:
+            mark="medium risk"
+    else:
+        if transactions>5:
+            mark="medium risk"
+        else:
+            mark="low risk"
+else:
+    unusual_activity = input("Is there Unusual Activity? (yes/no): ").lower()
+    if unusual_activity=="yes":
+        if device=="new":
+            mark="medium risk"
+        else:
+            mark="low risk"
+    else:
+        mark="safe"
+print(f"Risk Level : High Risk (Blocked)")
+
+

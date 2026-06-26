@@ -23,3 +23,26 @@ age = int(input("Enter Age: "))
 bmi = float(input("Enter BMI: "))
 running_time = int(input("Enter Running Time (in minutes): "))
 medical = input("Enter Medical Status (fit/unfit): ").lower()
+r=""
+if age>=18 and age<=25:
+    if bmi>=18 and bmi<=25:
+        if running_time<=15:
+            if medical=="fit":
+                r="select"
+            else:
+                r="reject"
+        else:
+            r="Physical fail"
+    else:
+        r="BMI Fail"
+elif age>=26 and age<=30:
+    if running_time<=14 and medical=="fit":
+        r="Conditional Selection"
+    else:
+        r="reject"
+
+else:
+    if age>30 or age<18:
+        r="not eligible"
+
+print(f"Selection Status : {r}")

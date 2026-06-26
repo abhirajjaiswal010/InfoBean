@@ -24,3 +24,31 @@ demand = int(input("Enter Demand: "))
 stock = int(input("Enter Stock: "))
 user_type = input("Enter User Type (premium/regular): ").lower()
 festival = input("Is it Festival Season? (yes/no): ").lower()
+d=""
+if demand>=80:
+    if stock<50:
+        if user_type=="premium":
+            if festival=="yes":
+                d="20%"
+            else:
+                d="10%"
+        else:
+            d="no discount"
+    elif stock>=50:
+        d="5% discount"
+elif demand>=40 and demand<=79:
+    if festival=="yes":
+        d="10%"
+    else:
+        d="no discount"
+
+else:
+    if demand<40:
+        if stock>200:
+           d="15%"
+        else:
+           d="no discount"
+           
+
+print(f"Discount :{d}")
+           

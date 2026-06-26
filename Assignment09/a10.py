@@ -31,7 +31,7 @@ if marks>=85:
     else:
         s="50% scholarship"
 else:
-    if marks<=70 and marks<=84:
+    if marks>=70 and marks<=84:
         if income <=200000:
             s="50% scholarship"
         else:

@@ -21,3 +21,25 @@ salary = int(input("Enter Salary: "))
 age = int(input("Enter Age: "))
 credit_score = int(input("Enter Credit Score: "))
 emi = int(input("Enter Monthly EMI: "))
+salaryForty=(salary*40)/100
+approve=""
+if salary >=40000:
+    if age>=21 and age<=60:
+        if credit_score>=750:
+            if emi<=salaryForty:
+                approve="8%"
+            else:
+                approve="10%"
+        else:
+            if credit_score>=650:
+                approve="12%"
+            else:
+                approve="reject"
+
+else:
+    if salary>=25000 and credit_score>=700:
+        approve="13%"
+    else:
+        approve="reject"
+        
+print(f"Loan Status : {approve}")
