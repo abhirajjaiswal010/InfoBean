@@ -14,11 +14,10 @@ First Digit = 5
 
 n=int(input("Enter The Num : "))
 
-
+a=0
 while n>0:
-    if(len(str(n))==1):
-        print(n)
+    a=n%10
     n//=10
     
-
+print(a)
     
