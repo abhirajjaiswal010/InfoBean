@@ -19,3 +19,18 @@ Ticket Price = 4000
 travel_class = input("Enter Class (business/economy): ").lower()
 distance = int(input("Enter Distance (in km): "))
 booking_time = input("Enter Booking Time (early/late): ").lower()
+p=0
+if travel_class=="business":
+    if distance>1000:
+        p=8000
+    else:
+        p=5000
+else:
+    if distance>1000:
+        if booking_time=="early":
+            p=4000
+        else:p=5000
+    else:
+        p=2500
+
+print(f"Ticket Price :{p}")

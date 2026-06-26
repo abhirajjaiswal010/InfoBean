@@ -20,3 +20,20 @@ Result = Reappear
 marks = int(input("Enter Marks: "))
 attendance = int(input("Enter Attendance (%): "))
 internal = int(input("Enter Internal Marks: "))
+
+if marks>=40:
+    if attendance>=75:
+        if internal>=20:
+            r="pass"
+        else:
+            r="pass by grace"
+    else:
+        r="Detained"
+else:
+    if marks>=35 :
+        if internal>=25:
+            r="Reappear"
+        else:
+            r="fail"
+
+print(f"result  : {r}")

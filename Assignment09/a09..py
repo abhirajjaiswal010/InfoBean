@@ -21,3 +21,23 @@ Treatment = Immediate ICU
 age = int(input("Enter Age: "))
 severity = input("Enter Severity (critical/moderate/low): ").lower()
 insurance = input("Is Patient Insured? (yes/no): ").lower()
+treat=""
+
+if severity=="critical":
+    if age>=60:
+        treat="Immediate ICU"
+    else:
+        treat="Emergency Ward"
+
+elif severity=="moderate":
+    if insurance=="yes":
+        treat="Priority Treatment"
+    else:
+        treat="General Queue"
+else:
+    if age<10:
+        treat="Pediatric Priority"
+    else:
+        treat="Wait..."
+
+print(f"Treatment={treat}")

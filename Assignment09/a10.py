@@ -21,3 +21,22 @@ Scholarship = Full Scholarship
 marks = int(input("Enter Marks: "))
 income = int(input("Enter Family Income: "))
 category = input("Enter Category (General/OBC/SC/ST): ").lower()
+
+if marks>=85:
+    if income<=300000:
+        if category!="general":
+            s="full scholarship"
+        else:
+            s="75% scholarship"
+    else:
+        s="50% scholarship"
+else:
+    if marks<=70 and marks<=84:
+        if income <=200000:
+            s="50% scholarship"
+        else:
+            s="25% scholarship"
+    else:
+        s="no scholarship"
+
+print(f"Scholarship : {s}")
