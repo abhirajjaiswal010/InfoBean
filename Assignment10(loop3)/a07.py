@@ -19,7 +19,7 @@ Duck Number
 '''
 n=input("Enter The Number: ")
 flag=False
-print(n)
+# print(n)
 
 if n[0]=='0':
     flag=False

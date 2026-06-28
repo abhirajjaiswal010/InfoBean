@@ -17,6 +17,9 @@ Prime Number
 
 n=int(input("Enter The Number :"))
 flag=False
+
+if n<=1:
+    flag=True
 i=2
 while i*i<=n:
     if n%i==0:
