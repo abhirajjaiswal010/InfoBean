@@ -17,15 +17,21 @@ Input:
 Output:
 Duck Number
 '''
-n=int(input("Enter The Number: "))
+n=input("Enter The Number: ")
 flag=False
+print(n)
 
-while n>0:
-    d=n%10
-    if d==0:
+if n[0]=='0':
+    flag=False
+else:
+    n1=int(n)
+    while n1>0:
+       d=n1%10
+       if d==0:
         flag=True
         break
-    n//=10
+       n1//=10
+
 
 if flag:
     print("duck number")
