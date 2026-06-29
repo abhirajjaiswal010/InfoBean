@@ -45,6 +45,7 @@ while step>0:
     sum+=d
     max=d if d>max else max
     stepRev=stepRev*10+d
+    
     step//=10
 
 print(f"Step Difference : {stepRev}")
