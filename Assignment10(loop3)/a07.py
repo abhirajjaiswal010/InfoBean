@@ -33,6 +33,9 @@ else:
        n1//=10
 
 
+    
+
+
 if flag:
     print("duck number")
 else:

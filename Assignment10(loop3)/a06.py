@@ -27,7 +27,7 @@ while l>0:
     sum=(sum*10)+d
     sq//=10
     l-=1
-
+print(sum)
 sum1=0
 #reverse
 while sum>0:
