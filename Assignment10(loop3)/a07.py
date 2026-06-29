@@ -20,7 +20,8 @@ Duck Number
 n=input("Enter The Number: ")
 flag=False
 # print(n)
-
+#logic-> 01
+'''
 if n[0]=='0':
     flag=False
 else:
@@ -31,6 +32,20 @@ else:
         flag=True
         break
        n1//=10
+'''
+
+for i in n:
+    if i=="0":
+        flag=False
+        break
+
+n1=int(n)
+while n1>0:
+    d=n1%10
+    if d==0:
+        flag=True
+        break
+    n1//=10
 
 
     
