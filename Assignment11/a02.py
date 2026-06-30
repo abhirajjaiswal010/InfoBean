@@ -17,23 +17,23 @@ Next Prime = 17
 '''
 
 n=int(input("Enter The Number : "))
-count=n+1
+m=n+1
 flag=True
 ans=0
 
-while count<(n*2):
+while m<(n*2):
     i=2
-    while i*i<=count:
-        if count%i==0:
+    while i*i<=m:
+        if m%i==0:
             flag=False
             break
         i+=1
     if flag:
-        ans=count
+        ans=m
         break
     else:
         flag=True
-        count+=1
+        m+=1
 
 print(f"next prime : {ans}")
 
