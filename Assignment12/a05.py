@@ -26,6 +26,6 @@ for i in range(1,l):
         print("not stable")
         break
     last=d
-    n//10
+    n//=10
 else:
     print("stable")

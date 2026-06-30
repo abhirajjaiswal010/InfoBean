@@ -18,19 +18,44 @@ Output
 Valid Unique Code
 '''
 
-n=int(input("Enter The Number : "))
-unique=n%10
-n//=10
-l=len(str(n))
-flag=True
-for i in range(1,l):
-    d=n%10
-    if unique==d:
-        print("invalid")
-        break
-    unique=d
-    n//=10
+n = int(input("Enter The Number : "))
+l = len(str(n))
+
+
+# for i in range(l):
+#     d1=n%10
+#     temp=n//10
+#     while temp>0:
+#         d2=temp%10
+
+#         if d1==d2:
+#             print("invalid")
+#             break
+#         temp//=10
+#     else:
+#         n//=10
+#         continue
+#     break
+# else:
+#     print("valid")
+
+for i in range(l):
+    d1=n%10
+    temp=n//10
+    for j in range(l):
+        d2=temp%10
+
+        if d1==d2:
+            print("invalid")
+            break
+        temp//=10
+    else:
+        n//=10
+        continue
+    break
 else:
     print("valid")
+        
+    
         
 
