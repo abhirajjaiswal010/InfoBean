@@ -26,6 +26,9 @@ for i in n:
         break
     break
 
+
+
+
 if flag==True:
     n1=int(n) 
     print(n1)      

@@ -39,7 +39,7 @@ sum=0
 
 for i in range(l,0,-1):
     d=n%10
-    # print(d)
+    print(d)
     sum+=d
     n//=100
 

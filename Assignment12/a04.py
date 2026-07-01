@@ -43,18 +43,23 @@ for i in range(l):
     d1=n%10
     temp=n//10
     for j in range(l):
+        
         d2=temp%10
-
         if d1==d2:
             print("invalid")
             break
         temp//=10
+        
     else:
         n//=10
         continue
     break
 else:
     print("valid")
+
+
+#logic with string
+
         
     
         
