@@ -39,3 +39,23 @@ Total Events Scheduled = 2
 
 a=int(input("Enter Starting Number : "))
 b=int(input("Enter Ending Number : "))
+leap=0
+notLeap=0
+while a<=b:
+    if a % 400 == 0:
+        print(f"{a} :Event Scheduled")
+        leap+=1
+    elif a % 100 == 0:
+        print(f"{a} :No Event")
+        notLeap+=1
+    elif a % 4 == 0:
+        print(f"{a} :Event Scheduled")
+        leap+=1
+    else:
+        print(f"{a} :No Event")
+        notLeap+=1
+    
+    a+=1
+
+print(f"total Leap Year :{leap}")
+print(f"total Event Scheduled :{leap}")
