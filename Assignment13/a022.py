@@ -141,17 +141,22 @@ while True:
             if n > 0:
                 salary = n
                 haveSalary = True
+                hra = salary * 20 // 100
+                da = salary * 10 // 100
+                allow = hra + da
+                netSal = salary + allow
+                if netSal > 50000:
+                    tax = netSal * 10 // 100
+                    rate = 10
+                else:
+                    tax = netSal * 5 // 100
+                    rate = 5
                 print("\n Basic salary recorded successfully.")
                 print(f" Basic Salary : ₹{salary}")
             
 
         case 2:
             if haveSalary:
-                hra = salary * 20 // 100
-                da = salary * 10 // 100
-                allow = hra + da
-                isAllow = True
-
                 print("\n Allowances Calculated")
                 print("-" * 30)
                 print(f"HRA (20%)  : ₹{hra}")
@@ -161,35 +166,29 @@ while True:
                 print(" Please enter Basic Salary first.")
 
         case 3:
-            if isAllow:
-                netSal = salary + allow
-
+            if haveSalary:        
                 print("\n Net Salary")
                 print("-" * 30)
                 print(f"Net Salary (Before Tax) : ₹{netSal}")
             else:
-                print(" Please calculate HRA and DA first.")
+                print("Please enter the Basic Salary")
 
         case 4:
-            if netSal > 0:
-                if netSal > 50000:
-                    tax = netSal * 10 // 100
-                    rate = 10
-                else:
-                    tax = netSal * 5 // 100
-                    rate = 5
-
+            
+            if haveSalary:
+            
                 print("\n Tax Details")
                 print("-" * 30)
                 print(f"Tax Rate : {rate}%")
                 print(f"Tax      : ₹{tax}")
             else:
-                print(" Please calculate Net Salary first.")
+                print("Please enter the Basic Salary")
+        
 
         case 5:
-            if tax > 0:
-                finalSalary = netSal - tax
+            if haveSalary:           
 
+                finalSalary = netSal - tax
                 print("\n" + "=" * 45)
                 print("              SALARY SLIP")
                 print("=" * 45)
@@ -204,7 +203,7 @@ while True:
                 print("=" * 45)
 
             else:
-                print(" Please calculate Tax first.")
+                print("Please Enter The Basic Salary")
 
         case 6:
             print("\nThank you for using Employee Salary Processor.")
