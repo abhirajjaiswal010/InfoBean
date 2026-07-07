@@ -6,9 +6,6 @@ C C C
 B B
 A
 '''
-
-
-
 n=int(input("Enter The Number : "))
 i=0
 while i<n:
