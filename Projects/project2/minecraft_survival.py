@@ -1,13 +1,9 @@
 
-
-# --- Game Variables ---
 health = 100
 hunger = 100
 xp = 0
 level = 1
-coins = 0
 
-# Resources
 wood = 0
 stone = 0
 coal = 0
@@ -16,7 +12,7 @@ gold = 0
 diamond = 0
 food = 0
 
-# Game State
+
 day = 1
 enemies_defeated = 0
 game_over = False
@@ -27,7 +23,9 @@ pickaxe_level = 0
 sword_level = 0
 shield = 0
 armor = 0
-torch = 0
+
+
+torch = 1
 
 # Buildings (0 = None, 1 = Wood House, 2 = Stone House, 3 = Iron House, 4 = Castle)
 house_level = 0
@@ -42,18 +40,17 @@ ach_home_builder = 0
 ach_warrior = 0
 ach_king = 0
 ach_dragon_slayer = 0
-ach_rich = 0
 ach_farmer = 0
 ach_monster_hunter = 0
 
-# --- Problem 1: Welcome Screen ---
+#Problem-1
 print("=========================")
-print("   MINECRAFT SURVIVAL")
+print("MINECRAFT SURVIVAL".ljust(5))
 print("=========================")
 input("Press Enter to Start")
 xp = xp + 10
 
-# --- Problem 2: Main Menu Loop ---
+# Problem 2: Main Menu Loop 
 while game_over == False and win == False:
     # Check Death
     if health <= 0:
@@ -62,19 +59,18 @@ while game_over == False and win == False:
         break
         
     print("\n=========================")
-    print("Day:", day, "| Health:", health, "| Hunger:", hunger, "| XP:", xp, "| Level:", level)
+    print("🌞Day:", day, "| 💓Health:", health, "| 🍗Hunger:", hunger, "| 🟢 XP:", xp, "| 🏆Level:", level)
     print("1. Gather Resources")
     print("2. Craft")
     print("3. Fight")
     print("4. Build")
-    print("5. Shop")
-    print("6. Report")
-    print("7. Eat Food")
-    print("8. Sleep (Next Day)")
-    print("9. Exit")
+    print("5. Report")
+    print("6. Eat Food")
+    print("7. Sleep (Next Day)")
+    print("8. Exit")
     print("=========================")
     
-    choice = input("Choose an action (1-9): ")
+    choice = input("Choose an action (1-8): ")
     action_taken = False
     
     if choice == "1":
@@ -83,9 +79,9 @@ while game_over == False and win == False:
         print("2. Mine Stone (Needs Pickaxe)")
         print("3. Mine Coal (Needs Pickaxe)")
         print("4. Mine Iron (Needs Stone Pickaxe)")
-        print("5. Mine Gold (Needs Iron Pickaxe)")
-        print("6. Mine Diamond (Needs Diamond Pickaxe)")
-        print("7. Collect Food")
+        
+        print("5. Mine Diamond (Needs Diamond Pickaxe)")
+        print("6. Collect Food")
         
         g_choice = input("What do you want to gather? ")
         
@@ -105,7 +101,7 @@ while game_over == False and win == False:
                 print("You need at least a Wooden Pickaxe!")
         elif g_choice == "3":
             if pickaxe_level >= 1:
-                coal = coal + 2
+                coal = coal + 3
                 xp = xp + 5
                 print("You mined 2 Coal.")
                 action_taken = True
@@ -113,29 +109,22 @@ while game_over == False and win == False:
                 print("You need at least a Wooden Pickaxe!")
         elif g_choice == "4":
             if pickaxe_level >= 2:
-                iron = iron + 2
+                iron = iron + 3
                 xp = xp + 10
                 print("You mined 2 Iron.")
                 action_taken = True
             else:
                 print("You need at least a Stone Pickaxe!")
+        
         elif g_choice == "5":
             if pickaxe_level >= 3:
-                gold = gold + 1
-                xp = xp + 15
-                print("You mined 1 Gold.")
-                action_taken = True
-            else:
-                print("You need at least an Iron Pickaxe!")
-        elif g_choice == "6":
-            if pickaxe_level >= 4:
-                diamond = diamond + 1
+                diamond = diamond + 3
                 xp = xp + 20
                 print("You mined 1 Diamond.")
                 action_taken = True
             else:
-                print("You need a Diamond Pickaxe!")
-        elif g_choice == "7":
+                print("You need a Diamond or Iron Pickaxe!")
+        elif g_choice == "6":
             food = food + 2
             xp = xp + 5
             print("You collected 2 Food.")
@@ -154,7 +143,7 @@ while game_over == False and win == False:
         print("7. Iron Sword (1 Wood, 3 Iron)")
         print("8. Diamond Sword (1 Wood, 3 Diamond)")
         print("9. Shield (5 Wood, 2 Iron)")
-        print("10. Torch (1 Wood, 1 Coal)")
+        print("10. Wooden Torch (2 Wood)")
         print("11. Diamond Armor (10 Diamond)")
         
         c_choice = input("What do you want to craft? ")
@@ -248,12 +237,11 @@ while game_over == False and win == False:
             else:
                 print("Not Enough Resources!")
         elif c_choice == "10":
-            if wood >= 1 and coal >= 1:
-                wood = wood - 1
-                coal = coal - 1
+            if wood >= 2:
+                wood = wood - 2
                 torch = 1
                 xp = xp + 5
-                print("Crafted Torch!")
+                print("Crafted Wooden Torch!")
                 action_taken = True
             else:
                 print("Not Enough Resources!")
@@ -283,7 +271,6 @@ while game_over == False and win == False:
             if sword_level >= 1:
                 print("You defeated the Zombie!")
                 xp = xp + 20
-                coins = coins + 15
                 enemies_defeated = enemies_defeated + 1
             else:
                 print("Without a sword, the Zombie hurt you!")
@@ -293,7 +280,6 @@ while game_over == False and win == False:
             if sword_level >= 2:
                 print("You defeated the Skeleton!")
                 xp = xp + 30
-                coins = coins + 20
                 enemies_defeated = enemies_defeated + 1
             else:
                 print("The Skeleton shot you! You need a better sword.")
@@ -303,7 +289,6 @@ while game_over == False and win == False:
             if sword_level >= 3:
                 print("You defeated the Creeper before it exploded!")
                 xp = xp + 40
-                coins = coins + 25
                 enemies_defeated = enemies_defeated + 1
             else:
                 print("The Creeper exploded!")
@@ -313,7 +298,6 @@ while game_over == False and win == False:
             if sword_level >= 3: # Iron Sword required
                 print("You defeated the Enderman!")
                 xp = xp + 50
-                coins = coins + 30
                 enemies_defeated = enemies_defeated + 1
             else:
                 print("The Enderman is too strong! You need an Iron Sword.")
@@ -323,17 +307,12 @@ while game_over == False and win == False:
             if sword_level == 4 and health > 70:
                 print("You valiantly fought and defeated the Ender Dragon!")
                 xp = xp + 1000
-                coins = coins + 500
                 enemies_defeated = enemies_defeated + 1
                 ach_dragon_slayer = 1
                 print("Achievement Unlocked: 🐉 Dragon Slayer")
                 
-                # Check Final Mission
-                if level >= 10 and house_level == 4 and farm == 1 and diamond >= 20 and armor == 1 and day >= 30:
-                    print("\n*** YOU HAVE COMPLETED THE FINAL MISSION! ***")
-                    win = True
-                else:
-                    print("You defeated the dragon, but you haven't met all Final Mission requirements yet!")
+                print("\n*** YOU HAVE COMPLETED THE FINAL MISSION! ***")
+                win = True
             else:
                 print("You are not prepared! You need a Diamond Sword and Health > 70.")
                 health = health - 80
@@ -413,72 +392,11 @@ while game_over == False and win == False:
             print("Invalid choice.")
             
     elif choice == "5":
-        print("\n--- Shop ---")
-        print("1. Buy")
-        print("2. Sell")
-        
-        s_choice = input("Buy or Sell (1/2)? ")
-        
-        if s_choice == "1":
-            print("1. Food (5 Coins)")
-            print("2. Wood (2 Coins)")
-            print("3. Stone (4 Coins)")
-            buy_c = input("Buy what? ")
-            
-            if buy_c == "1" and coins >= 5:
-                coins = coins - 5
-                food = food + 1
-                print("Bought 1 Food.")
-                action_taken = True
-            elif buy_c == "2" and coins >= 2:
-                coins = coins - 2
-                wood = wood + 1
-                print("Bought 1 Wood.")
-                action_taken = True
-            elif buy_c == "3" and coins >= 4:
-                coins = coins - 4
-                stone = stone + 1
-                print("Bought 1 Stone.")
-                action_taken = True
-            else:
-                print("Not enough coins or invalid choice.")
-                
-        elif s_choice == "2":
-            print("What to sell?")
-            print("wood, stone, iron, gold, diamond")
-            item = input("Item name: ")
-            qty = int(input("How many? "))
-            
-            if item == "wood" and wood >= qty:
-                wood = wood - qty
-                coins = coins + (qty * 1)
-                action_taken = True
-            elif item == "stone" and stone >= qty:
-                stone = stone - qty
-                coins = coins + (qty * 2)
-                action_taken = True
-            elif item == "iron" and iron >= qty:
-                iron = iron - qty
-                coins = coins + (qty * 5)
-                action_taken = True
-            elif item == "gold" and gold >= qty:
-                gold = gold - qty
-                coins = coins + (qty * 10)
-                action_taken = True
-            elif item == "diamond" and diamond >= qty:
-                diamond = diamond - qty
-                coins = coins + (qty * 20)
-                action_taken = True
-            else:
-                print("Invalid item or not enough quantity.")
-                
-    elif choice == "6":
         print("\n======== PLAYER REPORT ========")
         print("Health:", health)
         print("Hunger:", hunger)
         print("XP:", xp)
         print("Level:", level)
-        print("Coins:", coins)
         print("Wood:", wood)
         print("Stone:", stone)
         print("Coal:", coal)
@@ -497,7 +415,7 @@ while game_over == False and win == False:
         print("Current Day:", day)
         print("===============================\n")
         
-    elif choice == "7":
+    elif choice == "6":
         if food > 0:
             food = food - 1
             hunger = hunger + 20
@@ -508,10 +426,10 @@ while game_over == False and win == False:
         else:
             print("You don't have any food!")
             
-    elif choice == "8":
+    elif choice == "7":
         print("You sleep for the night.")
-        health = health + 20
-        if health > 100:
+        
+        if  health <100:
             health = 100
         day = day + 1
         action_taken = True
@@ -541,10 +459,10 @@ while game_over == False and win == False:
                 house_level = house_level - 1
                 print("Your house level decreased.")
         elif day % 10 == 0:
-            print("You found a Treasure Chest! +50 Coins.")
-            coins = coins + 50
+            print("You found a Treasure Chest! +50 XP.")
+            xp = xp + 50
             
-    elif choice == "9":
+    elif choice == "8":
         print("Exiting game...")
         game_over = True
         
@@ -558,9 +476,6 @@ while game_over == False and win == False:
             hunger = 0
             health = health - 5
             print("You are starving! Health -5")
-            
-        if coins < 0:
-            coins = 0
             
         # Level Up
         if level == 1 and xp >= 100:
@@ -615,10 +530,6 @@ while game_over == False and win == False:
         if ach_king == 0 and house_level == 4:
             ach_king = 1
             print("Achievement Unlocked: 👑 King")
-            
-        if ach_rich == 0 and coins >= 1000:
-            ach_rich = 1
-            print("Achievement Unlocked: 💰 Rich Player")
             
         if ach_farmer == 0 and farm == 1:
             ach_farmer = 1

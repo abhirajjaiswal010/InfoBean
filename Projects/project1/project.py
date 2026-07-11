@@ -1081,58 +1081,63 @@ while True:
                     print("✔ Playlist & Offline Maps")
 
         case 8:
-            print("\n" + "★" * 50)
-            print("          ✨ FINAL TRAVEL REPORT ✨")
-            print("★" * 50)
+            print("\n" + "=" * 50)
+            print("              FINAL TRAVEL REPORT")
+            print("=" * 50)
 
             if trip_name == "":
-                print("\n⚠️  No trip data found! Please create a trip first.")
+                print("\nNo trip details found.")
+                print("Please create a trip first.")
             else:
-                print(f"\n🛂 Traveler        : {traveler_name.title()}")
-                print(f"📌 Trip Name       : {trip_name.title()}")
-                print(
-                    f"🌍 Route           : {start_location.title()} ➔ {destination.title()}"
-                )
-                print(
-                    f"⏳ Duration        : {numberOfdays} Days / {night} Nights"
-                )
-                print(f"🎯 Purpose         : {purpose.title()}")
-                print(f"👥 Total Travelers : {travelers}")
+                print(f"\nTraveler Name   : {traveler_name.title()}")
+                print(f"Trip Name       : {trip_name.title()}")
+                print(f"From            : {start_location.title()}")
+                print(f"To              : {destination.title()}")
+                print(f"Duration        : {numberOfdays} Days / {night} Nights")
+                print(f"Purpose         : {purpose.title()}")
+                print(f"Travelers       : {travelers}")
 
                 print("\n" + "-" * 50)
-                print(" 🧳 BOOKING DETAILS")
+                print("BOOKING DETAILS")
                 print("-" * 50)
-                print(f"Travel Mode        : {travel_mode.title()}")
-                print(f"Travel Cost        : ₹{total_price}")
+
+                print(f"Travel Mode     : {travel_mode.title()}")
+                print(f"Travel Cost     : ₹{total_price}")
+
                 if hotel != "":
-                    print(
-                        f"Hotel Booked       : {hotel.title()} ({hotel_type})")
-                    print(f"Hotel Cost         : ₹{hotel_total}")
+                    print(f"Hotel           : {hotel.title()}")
+                    print(f"Room Type       : {hotel_type}")
+                    print(f"Hotel Cost      : ₹{hotel_total}")
                 else:
-                    print("Hotel Booked       : None")
+                    print("Hotel           : Not Booked")
 
                 total_trip_cost = total_price + hotel_total
 
-                print("\n" + "=" * 50)
-                print(f" 💰 TOTAL ESTIMATED COST : ₹{total_trip_cost}")
-                print("=" * 50)
-
                 print("\n" + "-" * 50)
-                print(" 📄 DOCUMENT STATUS")
+                print(f"Total Cost      : ₹{total_trip_cost}")
                 print("-" * 50)
-                print(
-                    f"ID Card            : {'Ready' if id_card == 'yes' else 'Missing/Unchecked'}"
-                )
-                print(
-                    f"Travel Tickets     : {'Ready' if ticket == 'yes' else 'Missing/Unchecked'}"
-                )
-                if hotel != "":
-                    print(
-                        f"Hotel Confirmation : {'Ready' if hotel_doc == 'yes' else 'Missing/Unchecked'}"
-                    )
 
-                print("\n🎉 Wishing you a safe and wonderful journey!")
-            print("★" * 50)
+                print("\nDOCUMENT STATUS")
+
+                if id_card == "yes":
+                    print("ID Card         : Available")
+                else:
+                    print("ID Card         : Not Available")
+
+                if ticket == "yes":
+                    print("Tickets         : Available")
+                else:
+                    print("Tickets         : Not Available")
+
+                if hotel != "":
+                    if hotel_doc == "yes":
+                        print("Hotel Receipt   : Available")
+                    else:
+                        print("Hotel Receipt   : Not Available")
+
+                print("\nHave a safe journey!")
+
+            print("=" * 50)
 
         case 9:
             print("\nThank You For Using Travel Itinerary Planner.")
