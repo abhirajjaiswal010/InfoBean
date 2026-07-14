@@ -1,10 +1,28 @@
+'''
+Docstring for a80
+Enter The Number : 4
+       *  
+
+     *   *
+       -
+   *   *   *
+     -   -
+ *   *   *   *
+   -   -   -
+   *   *   *
+     -   -
+     *   *
+       -
+       *
+'''
+
 n = int(input("Enter The Number : "))
 
 i = 1
 c = 1
 d = n - 1
-e = n - 1
-f = 1
+e = n 
+f = 0
 while i <= n + (n - 1):
 
     if i % 2 == 0:
@@ -33,6 +51,7 @@ while i <= n + (n - 1):
         while j <= c:
             print(" * ", end=" ")
             j += 1
+            
         c += 1
     print()
     i += 1

@@ -1,3 +1,15 @@
+"""
+Docstring for a88
+        1
+        2
+        3
+        4
+1 2 3 4 5 4 3 2 1 
+        4
+        3
+        2
+        1
+"""
 n=int(input("enter the num : "))
 k=n-1
 m=n-1
