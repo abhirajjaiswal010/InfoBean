@@ -13,3 +13,13 @@ Input: Enter account number: 123456789012
 
 Output: Masked Account: ********9012
 '''
+n=input("Enter The Account : ")
+s=""
+for i in range(0,len(n)):
+
+    if i>=len(n)-4 :
+        s+=n[i]
+    else:
+        s+="*"
+
+print(s)
