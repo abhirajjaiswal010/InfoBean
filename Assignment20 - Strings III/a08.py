@@ -82,12 +82,37 @@ while True:
 
         case 1:
             print("Choice 1")
-            n=input("Enter String : ")
-            a=""
-            for i in range(len(n)-1,-1,-1):
-                a+=n[i]
+            s=input("Enter String : ")         
+
+           
+            chars = ""
+            for ch in s:
+                if ch.isalnum():
+                    chars += ch
+
+            print(chars)
+
+           
+            rev = ""
+            i = len(chars) - 1
+            while i >= 0:
+                rev += chars[i]
+                i -= 1
             
-            print(a)
+            print(rev)
+
+            
+            ans = ""
+            j = 0
+
+            for ch in s:
+                if ch.isalnum():
+                    ans += rev[j]
+                    j += 1
+                else:
+                    ans += ch
+
+            print(ans)
 
             
 
