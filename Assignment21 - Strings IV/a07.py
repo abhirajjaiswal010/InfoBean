@@ -16,3 +16,13 @@ hello hello how are are you
 Output
 hello how are you
 '''
+
+n=input("Enter The : ")
+
+new=""
+
+for w in n.split():
+    if w not in new:
+        new+=w+" "
+
+print(new)

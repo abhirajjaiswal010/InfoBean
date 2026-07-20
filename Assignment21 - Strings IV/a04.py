@@ -16,3 +16,18 @@ Python is very easy to learn
 Output
 is
 '''
+
+n = input("Enter: ")
+
+shortest = ""
+first = True
+
+for word in n.split():
+    if first:
+        shortest = word
+        first = False
+    elif len(word) < len(shortest):
+        shortest = word
+
+print(shortest)
+    

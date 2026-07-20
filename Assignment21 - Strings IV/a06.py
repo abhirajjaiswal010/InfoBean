@@ -16,3 +16,15 @@ iphone
 Output
 2
 '''
+
+n=input("Enter The  : ")
+
+word=input("Enter The : ")
+
+count=0
+
+for w in n.split():
+    if w==word:
+        count+=1
+    
+print(count)

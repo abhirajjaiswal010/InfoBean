@@ -24,3 +24,41 @@ Ignore spaces while counting.
 If no second highest frequency exists, print:
 Second highest repeating character not found
 '''
+
+n = input("Enter: ")
+
+high = 0
+second = 0
+
+highC = ""
+secondC = ""
+
+visited = ""
+
+for ch in n:
+    if ch == " " or ch in visited:
+        continue
+
+    visited += ch
+
+    count = 0
+
+    for c in n:
+        if ch == c:
+            count += 1
+
+    if count > high:
+        second = high
+        secondC = highC
+
+        high = count
+        highC = ch
+
+    elif count >= second and count < high:
+        second = count
+        secondC = ch
+
+if second == 0:
+    print("Second highest repeating character not found")
+else:
+    print(secondC)

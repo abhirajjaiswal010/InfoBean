@@ -1,22 +1,36 @@
-# Find the First Non-Repeated Character
-# Scenario
+'''
+Docstring for Assignment21 - Strings IV.a03
+3. Find the First Non-Repeated Character
 
-# Railway Ticket Fraud Detection System
+Railway Ticket Fraud Detection System
 
-# The railway department generates ticket reference IDs automatically.
+The railway department generates ticket reference IDs automatically.
 
-# Sometimes, due to technical issues, many characters get repeated inside the ticket ID.
+Sometimes, due to technical issues, many characters get repeated inside the ticket ID.
 
-# Write a Python program to find the first character that appears only once in the string.
+The department wants a Python program that finds the first character that appears only once in the string.
 
-# Example
+Example 1
 
-# Input
+Input:
+aabbccddefg
+Output:
 
-# aabbccddefg
+```
+e
+```
+'''
 
-# Output
+n=input("Enter The input : ")
 
-# e
-# Condition
-# Program should work for both uppercase and lowercase letters.
+for i in range(len(n)):
+    count = 0
+
+    for j in range(len(n)):
+        if n[i] == n[j]:
+            count += 1
+
+    if count == 1:
+        print(n[i])
+        break
+

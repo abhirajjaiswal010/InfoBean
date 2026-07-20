@@ -19,3 +19,18 @@
 # Output
 # lufrewop si nohtyP
 
+n=input("Enter The :")
+sent=""
+for word in n.split():
+
+    rev=""
+    for i in range(len(word)-1,-1,-1):
+        rev+=word[i]
+    if sent == "":
+        sent = rev
+    else:
+        sent = rev + " " + sent
+
+    
+print(sent, end=" ")
+
