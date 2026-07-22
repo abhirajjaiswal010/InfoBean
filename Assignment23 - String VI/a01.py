@@ -20,3 +20,34 @@ Output:
 abc
 ```
 '''
+
+s=input("Enter:")
+
+ans=""
+
+for i in range(len(s)):
+    for j in range(i+1,len(s)+1):
+        sub=s[i:j]
+        # print(sub)
+        count=0
+
+        for k in range(len(s)-len(sub)+1):
+            match=True
+
+            for m in range(len(sub)):
+                if s[k+m]!=sub[m]:
+                    print(s[k+m],sub[m])
+                    match=False
+                    break
+            
+            if match:
+                count+=1
+        
+        if count>=2 and len(sub)>len(ans):
+            ans=sub
+
+print(ans)
+
+
+
+    

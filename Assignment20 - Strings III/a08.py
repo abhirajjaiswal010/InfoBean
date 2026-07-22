@@ -158,7 +158,7 @@ while True:
 
                 found = False
 
-                # Check duplicate (ignore case)
+            
                 for w in seen.split():
                     if word.lower() == w.lower():
                         found = True
@@ -167,7 +167,7 @@ while True:
                 if not found:
                     seen += word + " "
 
-            # Reverse word order
+        
             words = seen.split()
 
             for i in range(len(words) - 1, -1, -1):
