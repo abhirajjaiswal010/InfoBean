@@ -38,5 +38,5 @@ while a<=b:
         if a==factor:
             print(a)
         
-        factor=1
+        
         a+=1

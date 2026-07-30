@@ -9,7 +9,7 @@ Docstring for Assignment15(Pattern).a08
 '''
 
 n=int(input("Enter The Range : "))
-c=0
+
 i=1
 while i<=n:
     k=0

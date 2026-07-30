@@ -18,3 +18,15 @@ Google Search
 Output:
 a1c1e2g2h1l1o2r1s1t1
 '''
+
+n=input("Enter : ").lower()
+new=""
+
+for word in n.split():
+    for i in word:
+        new+=i
+print(sorted(new).join(""))
+
+
+        
+        
