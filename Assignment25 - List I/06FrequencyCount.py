@@ -106,7 +106,7 @@
 
 
 
-n=int(input("Enter The Number Of Student : "))
+n=int(input("Enter The Survey  Range: "))
 
 entries=[]
 valid=[]
@@ -116,7 +116,7 @@ invalid=[]
 for i  in range(1,n+1):
 
     
-    a=float(input(f"The Marks Of student {i} :"))
+    a=int(input(f"The survey {i} :"))
     if a<0:
         invalid.append(a)
     else:
@@ -140,15 +140,44 @@ else:
     minCount=len(valid)
 
 
-    for i in range:
+    print("frequency count ")
+    for i in valid:
         found=False
-        for j in range:
+        for j in  visit:
             if i==j:
                 found=True
                 break
         if found:
             continue
         count=0
+
+        for j in valid:
+            if j==i:
+                count+=1
+        print(f"{i} ---> {count}")
+        visit.append(i)
+
+    if count > maxCount:
+        maxCount = count
+        max = [i]
+
+    elif count == maxCount:
+        max.append(i)
+    
+    if count<minCount:
+         minCount=count
+         least=[i]
+    elif count==minCount:
+         least.append(i)
+
+    if len(invalid) > 0:
+        print("\nInvalid Entries Ignored:", invalid)
+
+    print("\nMost Frequent:", most)
+    print("Least Frequent:", least)
+         
+
+
 
         
 
