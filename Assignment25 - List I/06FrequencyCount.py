@@ -173,7 +173,7 @@ else:
     if len(invalid) > 0:
         print("\nInvalid Entries Ignored:", invalid)
 
-    print("\nMost Frequent:", most)
+    print("\nMost Frequent:", max)
     print("Least Frequent:", least)
          
 
