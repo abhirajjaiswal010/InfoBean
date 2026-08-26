@@ -59,7 +59,7 @@ def update(id):
 def delete(id):
 
     if id in d:
-        d.popitem(id)
+        d.pop(id)
         print("Patient Removed SuccessFully ... ")
     else:
         print("Patient Not Found")
@@ -80,12 +80,15 @@ def displayPatient():
 
 
 def findDiseaseInPatient(dis):
+    found=False
 
     for i in d:
         if d[i]["disease"] == dis:
             print(f"{d[i]} --> {d[i]["name"]}")
-    else:
-        print(f"No Patient Is Found With {dis} ")
+            found=True
+    
+    if not found:
+        print("Patient Not Found")
 
 
 def oldAge():
@@ -100,13 +103,17 @@ def oldAge():
             id = i
     print("Oldest Patient Details")
     print(f"Patient ID : {id}")
-    print(f"Patient Name : {d[i]["name"]}")
-    print(f"Age : {d[i]["age"]}")
-    print(f"Disease : {d[i]["disease"]}")
-    print(f"Doctor : {d[i]["doctor"]}")
+    print(f"Patient Name : {d[id]["name"]}")
+    print(f"Age : {d[id]["age"]}")
+    print(f"Disease : {d[id]["disease"]}")
+    print(f"Doctor : {d[id]["doctor"]}")
 
 
 def youngAge():
+    if not d:
+        print("No Patient Found")
+        return
+    
     young = d[0]["age"]
     id = 0
 
@@ -182,6 +189,7 @@ while True:
 
         case 10:
             print("Thank You For Using Hosptital Patient Management System")
+            break
 
         case _:
             print("Invalid Choice")
