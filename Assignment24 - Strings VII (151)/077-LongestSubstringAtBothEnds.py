@@ -8,7 +8,7 @@ the end of the string.
 The prefix and suffix must not overlap.
 
 Input:
-Enter a string: abcXYZabc
+Enter a string: abcXYZabc -> 9/2-> 5
 
 Output:
 Longest Substring: abc
@@ -16,6 +16,8 @@ Longest Substring: abc
 
 s=input("Enter The String : ")
 longest=""
+
+
 for i in range(1,len(s)//2):
     prefix=s[:i]
     suffix=s[len(s)-i:]
