@@ -19,7 +19,7 @@ Valid PNR Number
 
 n=input("enter the PNR : ")
 c=0
-if len(n)==12:
+if len(n)==12: 
     if n.startswith("PNR"):
         i=3
         while i<len(n):

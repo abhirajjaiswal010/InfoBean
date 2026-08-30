@@ -12,9 +12,9 @@ s = ""
 word = ""
 
 for i in range(len(n)):
-
+#java is best 
     if n[i] != " ":
-        word += n[i]
+        word += n[i] #j a v a
 
     else:
         
@@ -22,9 +22,9 @@ for i in range(len(n)):
             s += word[j]
 
         s += " "
-        word = ""
+        word = "" #reset
 
-
+#last word ke liye 
 for j in range(len(word) - 1, -1, -1):
     s += word[j]
 

@@ -1,4 +1,4 @@
-'''
+"""
 Question:
 Replace all duplicate characters with '$'.
 
@@ -59,22 +59,39 @@ Test Cases:
     mississippi
     Output:
     m$$$$$$$$$$
-'''
+"""
 
-s=input("Enter The String : ")
-new=""
+s = input("Enter The String : ")
+new = ""
 
-for i in s:
-    count=0
-    for j in s:
-        if i==j:
-            count+=1
+#& --> approach for hello  -> he$l0
+# for i in range(len(s)):
+#     count = 0
+#     for j in range(i+1,len(s)):
+#         if s[i] == s[j]:
+#             count += 1
+#     if count > 0:
+#         new += "&"
+#     else:
+#         new += s[i]
+
+# print(new)
+
+
+
+for i in range(len(s)):
+    found=False
     
-    if count!=1:
-        new+="$"
-
+    for j in range(i):
+        if s[i] == s[j]:
+            found=True
+            break
+    if found:
+        new += "&"
     else:
-        new+=i
+        new += s[i]
 
-print(new)
-
+if not new: 
+    print("empt")
+else:
+    print(new)

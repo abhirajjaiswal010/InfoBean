@@ -55,16 +55,15 @@ n=len(arr)
 arr.sort()
 long=1
 curr=1
-start=0
-end=0
+# start=0
+# end=0
 
 for i in range(1,n):
     if arr[i]-arr[i-1]==1:
         curr+=1
     else:
         curr=1
-        start=i
-    
+        
     if curr>long:
         long=curr
         end=i

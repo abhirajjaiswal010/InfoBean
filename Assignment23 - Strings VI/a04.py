@@ -22,7 +22,7 @@ file file(1) image file(2) image(1) data
 
 n=input("Enter : ")
 new=""
-done=""
+done="file image"
 # first=False
 
 for word in n.split():
@@ -37,7 +37,7 @@ for word in n.split():
        
     else:
         
-        new+=word+"("+str(temp)+") "
+        new+=word+"("+str(temp)+") " # file(1)
     done+=word+" "
 
 print(new)

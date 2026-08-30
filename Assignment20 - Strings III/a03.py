@@ -7,7 +7,7 @@ unnecessary spaces. To improve readability and storage efficiency, the
 system should remove extra spaces and keep only a single space between
 words.
 
-Input: Enter message: Java is easy
+Input: Enter message: Java   is   easy
 
 Output: Cleaned Message: Java is easy
 '''
@@ -18,7 +18,7 @@ s=""
 for i in range (len(n)):
    
    if n[i]==" ":
-      print(i)
+      # print(i)
       r=""
                
       count=0

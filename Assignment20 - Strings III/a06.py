@@ -47,6 +47,7 @@ for i in range(len(n)):
         s += n[i]
 
 
+
 for i in range(len(s)):
     if s[i] not in "0123456789":
 
