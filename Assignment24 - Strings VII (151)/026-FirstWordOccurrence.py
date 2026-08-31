@@ -3,18 +3,23 @@
 s = input("Enter the String: ")
 word = input("Enter the Word: ")
 
-idx = -1;
-subStringSearch=len(s)-len(word)+1
 
-for i in range(subStringSearch):
-    match=True
+idx = -1
+
+possiblePositions = len(s) - len(word) + 1
+
+for i in range(possiblePositions):
+
+    match = True
+
     for j in range(len(word)):
-        if s[i+j]!=word[j]:
-            match=False
+
+        if s[i + j] != word[j]:
+            match = False
             break
-    
+
     if match:
-        idx=i
+        idx = i
         break
 
 print(idx)
