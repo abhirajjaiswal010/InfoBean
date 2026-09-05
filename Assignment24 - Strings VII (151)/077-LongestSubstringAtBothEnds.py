@@ -14,14 +14,20 @@ Output:
 Longest Substring: abc
 '''
 
-s=input("Enter The String : ")
-longest=""
+s = input("Enter The String : ")
+
+longest = ""
+
+for i in range(1, len(s)//2 + 1):
+
+    prefix = s[:i]
+    suffix = s[len(s)-i:]
+
+    if prefix == suffix:
+        longest = prefix
 
 
-for i in range(1,len(s)//2):
-    prefix=s[:i]
-    suffix=s[len(s)-i:]
-
-    if prefix==suffix:
-        longest=prefix
-print(longest)
+if longest:
+    print(longest)
+else:
+    print("not found")
