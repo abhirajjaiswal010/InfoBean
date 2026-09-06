@@ -81,7 +81,7 @@ for i in l:
         thirdMax=secondMax
         secondMax = i
 
-    if i < secondMax and i > thirdMax:
+    if i > thirdMax:
         thirdMax = i
 
 
