@@ -13,6 +13,24 @@ Enter Coupon Number:
 Output:
 Prime Number
 '''
-prime=False
-def check_prime(n):
+
+def check_prime(n,i):
+    if n<=1:
+        return False
     
+    if i>n//2:
+        return True
+    
+    if n%i==0:
+        return False
+    
+    return check_prime(n,i+1)
+
+n=int(input("Enter : "))
+
+ans=check_prime(n,2)
+if ans:
+    print("Prime Number")
+else:
+    print("Not Prime Number")
+
