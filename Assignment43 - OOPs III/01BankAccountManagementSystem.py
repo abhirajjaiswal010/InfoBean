@@ -9,7 +9,7 @@ class Bank:
         self.customer_name = customer_name
         self.account_balance = account_balance
 
-    # Instance Methods
+    
 
     def deposit_money(self, amount):
         self.account_balance += amount
@@ -38,7 +38,7 @@ class Bank:
         else:
             print("Not Enough Balance")
 
-    # Class Methods
+    
 
     @classmethod
     def change_interest_rate(cls, new_rate):
@@ -54,7 +54,7 @@ class Bank:
         print(f"Interest Rate  : {cls.interest_rate}%")
         print()
 
-    # Static Methods
+    
 
     @staticmethod
     def validate_account_number(account_no):
@@ -74,8 +74,6 @@ class Bank:
         transaction_id = "TXN" + str(Bank.transaction_id)
         print(f"Transaction ID : {transaction_id}")
 
-
-# Program
 
 Bank.display_bank_info()
 
