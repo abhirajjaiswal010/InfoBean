@@ -10,7 +10,7 @@ may not use the same element twice.
 Example 1:
 Input:
 nums = [2, 7, 11, 15]
-target = 9
+target =9 
 
 Output:
 [0, 1]
@@ -32,18 +32,38 @@ Output:
 [0, 1]
 '''
 
+# nums = [2, 7, 11, 15]
+# target = 10
+# found=False
+
+# for i in range(len(nums)):
+#     for j in range(i + 1, len(nums)):
+#         if nums[i] + nums[j] == target:
+#             print([i, j])
+#             found=True
+#             break
+
+# if not found:
+#     print(-1)   
+
+##^ two sum -> by map 
 nums = [2, 7, 11, 15]
-target = 10
+target = 9
 found=False
+hashmap_lookup={}
 
 for i in range(len(nums)):
-    for j in range(i + 1, len(nums)):
-        if nums[i] + nums[j] == target:
-            print([i, j])
-            found=True
-            break
+    complement=target-nums[i]
+
+    if complement in hashmap_lookup:
+       print(hashmap_lookup[complement],i)
+       found = True
+    else:
+        hashmap_lookup[nums[i]]=i
 
 if not found:
-    print(-1)
+    print("not found")
+
+
 
        

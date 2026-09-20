@@ -34,11 +34,31 @@ Constraints:
 l=list(map(int,input("Enter : ").split()))
 
 
-miss=[]
-l=sorted(set(l))
+for i in l:
+    index=abs(i)-1
+    l[index]=-abs(l[index])
 
+print(l)
+ans=[]
 for i in range(len(l)):
-    if l[i]!=i+1:
-        miss.append(i+1)
+    if l[i]>0:
+        ans.append(i+1)
 
-print(miss)
+print(ans)
+        
+
+
+'''
+Algorithm
+1.Array ke har num ko traverse karo.
+
+2.num ka corresponding index nikalo:
+
+3.index = abs(num) - 1
+4.Us index ke element ko negative mark karo.
+5.Pura array traverse karne ke baad:
+6.Agar nums[i] > 0 hai → i + 1 missing hai.
+7.Agar nums[i] < 0 hai → i + 1 present hai.
+8.Saare positive positions ke corresponding numbers ko answer mein add karo.
+
+'''

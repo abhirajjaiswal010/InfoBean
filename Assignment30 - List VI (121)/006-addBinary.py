@@ -46,7 +46,6 @@ carry=0
 ans=''
 while i<=len(s1) or j<=len(s2) or carry!=0:
     #yha error nhi ay toh if else lgya
-
     if i<=len(s1):
         a=int(s1[-i]) #"1010" -> 0 
     else:
@@ -58,11 +57,11 @@ while i<=len(s1) or j<=len(s2) or carry!=0:
     else:
         b=0
        
-
     sum=a+b+carry # 0+1+0 -> 1
     # print(sum)
     ans+=str(sum%2) #1%2 -> 1  #2%2==0
-    carry=sum//2    #1//2 -> 1 
+    carry=sum//2    #1//2 -> 0
+    print(f"carry {carry}") 
 
     i+=1
     j+=1
@@ -70,4 +69,17 @@ while i<=len(s1) or j<=len(s2) or carry!=0:
 
 
 
-print(ans)
+print(ans[::-1])
+
+
+'''
+Algo
+
+Right → left add karo.
+total = a + b + carry
+total % 2 → current binary digit
+total // 2 → carry
+Dono strings khatam hone tak loop chalao.
+Last mein carry bhi process karo.
+Reverse-built answer ko ans[::-1] se reverse karo.
+'''

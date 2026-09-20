@@ -57,3 +57,15 @@ while left<=right:
     pos-=1
 
 print(ans)
+
+'''
+Algorithm — Brief
+left and right pointers ko array ke dono ends par rakho.
+abs(l[left]) aur abs(l[right]) compare karo.
+Jiska absolute value bada ho, uska square ans[pos] mein rakho.
+Us pointer ko move karo.
+pos ko right se left move karo.
+Repeat until left > right.
+
+Pattern: Two Pointers
+'''

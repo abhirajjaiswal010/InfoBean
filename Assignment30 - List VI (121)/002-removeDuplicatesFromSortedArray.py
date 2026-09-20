@@ -32,7 +32,7 @@ The first five elements of nums should be [0, 1, 2, 3, 4].
 
 # l=list(map(int,input("Enter The Num : ").split()))
 l=[1,1,2,3,3]
-
+print(l)
 i=0 #i pointer
 for j in range(1,len(l)):  #j pointer
     if l[j]!=l[i]:

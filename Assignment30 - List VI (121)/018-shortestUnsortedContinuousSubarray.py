@@ -47,3 +47,40 @@ Constraints:
 '''
 
 l=list(map(int,input("Enter ").split()))
+
+
+left=-1
+right=-1
+
+max=l[0]
+
+for i in range(1,len(l)):
+    if l[i]<max:
+        right=i
+    else:
+        max=l[i]
+
+min=l[len(l)-1]
+
+for i in range(len(l)-2,0,-1):
+    if l[i]>min:
+        left=i
+    else:
+        min=l[i]
+
+
+if left==-1:
+    print(0)
+else:
+    print(right-left+1)
+
+
+# Left → Right
+# max maintain karo.
+# Agar nums[i] < max, to right = i.
+# Right → Left
+# min maintain karo.
+# Agar nums[i] > min, to left = i.
+# Agar left == -1 → array already sorted → 0.
+# Otherwise:
+# answer = right - left + 1

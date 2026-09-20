@@ -40,13 +40,22 @@ Constraints:
 '''
 
 l=[5, 4, -1, 7, 8]
-maxsum=0
-for i in range(len(l)):
-    sum=0
-    for j in range(i,len(l)):
-        sum+=l[j]
-        # print(sum)
-        if sum>maxsum:
-            maxsum=sum
+# maxsum=0
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum+=l[j]
+#         # print(sum)
+#         if sum>maxsum:
+#             maxsum=sum
 
-print(maxsum)
+# print(maxsum)
+
+current_sum=l[0]
+max_sum=l[0]
+
+for i in range(1,len(l)):
+    current_sum=max(l[i],current_sum+l[i])
+    max_sum=max(current_sum,max_sum)
+
+print(max_sum)
