@@ -23,6 +23,8 @@ for i in n:
     if new=="" or i!=new[-1]:
         print("selected - ",i)
         new+=i
+
+        
     
 
     

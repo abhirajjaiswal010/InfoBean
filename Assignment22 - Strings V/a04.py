@@ -13,32 +13,65 @@ Output:
 b d
 '''
 
-n=input("Enter : ")
+# n=input("Enter : ")
 
-count=0
-e=""
+# count=0
+# e=""
+
+# for i in n:
+    
+#     temp=0
+
+#     for j in n:
+#         if i==j:
+#             temp+=1
+        
+#     if temp>count:
+#         count=temp
+        
+
+# print(count)
+
+# for i  in n:
+#     temp=0
+#     for j in n:
+#         if i==j:
+#             temp+=1
+    
+#     if temp==count and i not in e :
+#         e+=i+" "
+
+# print(e)
+
+
+#dictionary
+
+n = input("Enter : ")
+
+freq = {}
 
 for i in n:
-    
-    temp=0
 
-    for j in n:
-        if i==j:
-            temp+=1
+    if i in freq:
+        freq[i] += 1
+    else:
+        freq[i] = 1
+
+high = 0 # -> 3
+
+
+for i in freq:
+
+    if freq[i] > high:
+        high = freq[i]
         
-    if temp>count:
-        count=temp
-        
 
-print(count)
+print(high)
 
-for i  in n:
-    temp=0
-    for j in n:
-        if i==j:
-            temp+=1
-    
-    if temp==count and i not in e :
-        e+=i+" "
 
-print(e)
+wo=""
+for i in freq:
+    if freq[i]==high:
+        wo+=i+" "
+
+print(wo)

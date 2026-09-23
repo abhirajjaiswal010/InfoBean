@@ -31,3 +31,28 @@ for word in n.split():
         wo=word
 
 print(wo)
+
+
+
+
+n = input("Enter : ")
+
+freq = {}
+
+for word in n.split():
+
+    if word in freq:
+        freq[word] += 1
+    else:
+        freq[word] = 1
+
+high = 0
+wo = ""
+
+for word in freq:
+
+    if freq[word] > high:
+        high = freq[word]
+        wo = word
+
+print(wo)

@@ -29,6 +29,7 @@ for i in n:
     
     if temp>1:
         l=i
+        
 
 if l=="":
     print("no repeat ")

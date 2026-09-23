@@ -21,7 +21,7 @@ madam
 
 n=input("Enter : ")
 s=""
-find=False
+find=False 
 
 for word in n.split():
 
