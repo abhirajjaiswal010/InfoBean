@@ -22,7 +22,7 @@ file file(1) image file(2) image(1) data
 
 n=input("Enter : ")
 new=""
-done="file image"
+done=""
 # first=False
 
 for word in n.split():

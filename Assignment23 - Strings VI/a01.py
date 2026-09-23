@@ -21,33 +21,49 @@ abc
 ```
 '''
 
-s=input("Enter:")
+s = input("Enter: ")
 
-ans=""
+ans = ""
 
+# Har possible starting position se substring banana
 for i in range(len(s)):
-    for j in range(i+1,len(s)+1):
-        sub=s[i:j]
-        # print(sub)
-        count=0
 
-        for k in range(len(s)-len(sub)+1):
-            match=True
+    # i se lekar last character tak different substring banayenge
+    for j in range(i + 1, len(s) + 1):
 
+        # Current substring nikalo
+        sub = s[i:j]
+
+        count = 0
+
+        # Puri string mein check karo ki substring kitni baar present hai
+        for k in range(len(s) - len(sub) + 1):
+
+            # Maan rahe hain ki substring match karegi
+            match = True
+
+            # Current substring ke har character ko compare karo
             for m in range(len(sub)):
-                if s[k+m]!=sub[m]:
-                    print(s[k+m],sub[m])
-                    match=False
+
+                # Agar character match nahi karta
+                if s[k + m] != sub[m]:
+
+                    # Substring match nahi hui
+                    match = False
                     break
-            
+
+            # Agar complete substring match ho gayi
             if match:
-                count+=1
-        
-        if count>=2 and len(sub)>len(ans):
-            ans=sub
+                count += 1
+
+        # Agar substring kam se kam 2 baar aayi
+        # aur current answer se badi hai
+        if count >= 2 and len(sub) > len(ans):
+
+            # Current substring ko longest repeating substring bana do
+            ans = sub
 
 print(ans)
-
 
 
     
