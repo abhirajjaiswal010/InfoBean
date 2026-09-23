@@ -16,8 +16,8 @@ Valid Employee ID
 '''
 
 n=input("Enter The Employee : ")
-a=n[:3]
-b=n[3:]
+a=n[:3] #emp
+b=n[3:]  # emp ke baad
 
 if len(n)!=8:
     print("Length must be 8")

@@ -16,15 +16,13 @@ Output:
 Both Product Codes are Matching
 '''
 
-first=input("enter the first product code :  ").lower()
-second=input("enter the second product code : ").lower()
+first = input("Enter the first product code: ").lower()
+second = input("Enter the second product code: ").lower()
 
-ignSpace=second.replace(" ","")
-print(ignSpace)
+first = first.replace(" ", "")
+second = second.replace(" ", "")
 
-
-if sorted(first)==sorted(ignSpace):
-    print("match")
+if sorted(first) == sorted(second):
+    print("Both Product Codes are Matching")
 else:
-    print("not match ")
-
+    print("Both Product Codes are Not Matching")

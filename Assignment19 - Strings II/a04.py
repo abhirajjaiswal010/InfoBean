@@ -11,11 +11,30 @@ Output:
 Total words: 5
 
 '''
-n=input("Enter The Complaint : ")
-count=0
+# n=input("Enter The Complaint : ")
+# count=0
 
-for word in n.split():
-    # print(word)
-    count+=1
+# for word in n.split():
+#     # print(word)
+#     count+=1
+
+# print(count)
+
+
+n = input("Enter The Complaint : ")
+
+count = 0
+i = 0
+
+while i < len(n):
+    if n[i] != " ":
+        if i == 0 or n[i - 1] == " ":
+            count += 1
+    i += 1
 
 print(count)
+
+#algo
+#1. agar ch vo space nhi hai 
+#2. phir check ki i=0 mein ch  hai toh count++
+#3. and agar ch ke pehle space hai toh count++
