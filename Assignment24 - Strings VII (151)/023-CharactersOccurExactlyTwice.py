@@ -1,4 +1,5 @@
-# 23. Print all characters that occur exactly twice.
+
+#& 23. Print all characters that occur exactly twice.
 
 
 n=input("ENter : ")
@@ -20,3 +21,4 @@ if l=="":
     print("no repeat ")
 else:
     print(l)
+

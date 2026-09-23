@@ -1,4 +1,5 @@
-# 24. Check if all characters in a string are unique (no repetition).
+
+#& 24. Check if all characters in a string are unique (no repetition).
 
 
 n=input("Enter The String : ")
