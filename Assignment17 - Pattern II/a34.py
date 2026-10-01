@@ -1,4 +1,5 @@
 '''
+
 Docstring for Assignment17(Pattern-II).a34
 E E E E E 
 D D D D

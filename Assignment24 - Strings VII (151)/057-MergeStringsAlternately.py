@@ -70,21 +70,21 @@ k=0
 while i<len(s1) and j<len(s2):
     new+=s1[i]
     i+=1
-    k+=1
+    
 
     new+=s2[j]
     j+=1
-    k+=1
+    
 
 while i<len(s1):
     new+=s1[i]
     i+=1
-    k+=1
+    
 
 while j<len(s2):
     new+=s2[j]
     j+=1
-    k+=1
+    
 
     
 print(new)

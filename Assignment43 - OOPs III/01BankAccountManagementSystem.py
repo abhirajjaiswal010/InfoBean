@@ -58,7 +58,7 @@ class Bank:
 
     @staticmethod
     def validate_account_number(account_no):
-        if 1000 <= account_no <= 9999:
+        if 1000 < account_no <= 9999:
             print("Valid Account Number")
         else:
             print("Invalid Account Number")

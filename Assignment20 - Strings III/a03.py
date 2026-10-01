@@ -12,30 +12,23 @@ Input: Enter message: Java   is   easy
 Output: Cleaned Message: Java is easy
 '''
 
-n=input("Enter The Name : ")
-s=""
+n = input("Enter The Message : ")
 
-for i in range (len(n)):
-   
-   if n[i]==" ":
-      # print(i)
-      r=""
-               
-      count=0
+s = ""
+i = 0
+space = False
 
-      for j in range (i-1,-1,-1):
+while i < len(n):
 
-        if n[j]==" ":
-            count+=1
-        else:
-           break
-      print(count)
-    
-      if count==0 and i!=0:
-         s+=n[i]
-      
-   else:
-      s+=n[i]
+    if n[i] != " ": #agar char hai
+        if space and s != "":
+            s += " "
+        s += n[i]
+        space = False
+    else:
+        if s != "":
+            space = True
 
-print(s)
-print(n)
+    i += 1
+
+print("Cleaned Message:", s)
