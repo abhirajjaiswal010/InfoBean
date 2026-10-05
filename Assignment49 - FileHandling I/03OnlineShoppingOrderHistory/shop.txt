@@ -1,0 +1,2 @@
+101 rahul laptop 1 50000
+102 prita mouse 3 1500
