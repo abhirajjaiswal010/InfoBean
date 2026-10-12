@@ -1,7 +1,6 @@
 from pathlib import Path as path
 import string
 
-
 base_dir = path(__file__).parent
 file_path = base_dir / "article.txt"
 
@@ -15,27 +14,22 @@ with open(file_path, "w+") as f:
 
     line = f.read()
 
-    most_frequent_word=''
-    most_frequent=0
-
-    
+    most_frequent_word = ""
+    most_frequent = 0
 
     for word in line.split():
 
         word = word.strip(string.punctuation).lower()
-        count=0
+        count = 0
 
         for i in line.split():
-            i=i.strip(string.punctuation).lower()
-            if i==word:
-                count+=1
-        
-        if count > most_frequent:
-            most_frequent=count
-            most_frequent_word=word
+            i = i.strip(string.punctuation).lower()
+            if i == word:
+                count += 1
 
+        if count > most_frequent:
+            most_frequent = count
+            most_frequent_word = word
 
     print(f"Most Frequent Word : {most_frequent_word}")
     print(f"Frequency Of Word  : {most_frequent}")
-            
-

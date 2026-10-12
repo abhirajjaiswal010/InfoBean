@@ -19,7 +19,8 @@ class Hospital(ABC):
     def calculate_final_amount(self, bill, discount):
         self.final_amount = bill - discount
         return self.final_amount
-
+ 
+    @abstractmethod
     def generate_bill(self):
         bill = self.calculate_bill()
         discount = self.calculate_discount()
@@ -30,34 +31,34 @@ class Hospital(ABC):
            HOSPITAL BILL
 ========================================
 Patient ID       : {self.patient_id}
-Patient Name     : {self.patient_name}
+Patient Name     : {self.patient_name}  
 Patient Age      : {self.patient_age}
 Patient Type     : {self.patient_type}
 
-Consultation Fee : ₹{self.consultation_fee:.2f}
-Room Charges     : ₹{self.room_charge * self.number_of_days:.2f}
-Medicine Charges : ₹{self.medicine_charge:.2f}
+Consultation Fee : Rs.{self.consultation_fee:.2f}
+Room Charges     : Rs.{self.room_charge * self.number_of_days:.2f}
+Medicine Charges : Rs.{self.medicine_charge:.2f}
 """)
 
         if self.patient_type == "Emergency":
-            print(f"Emergency Charge : ₹{self.emergency_charge:.2f}\n")
+            print(f"Emergency Charge : Rs.{self.emergency_charge:.2f}\n")
 
         if self.patient_type == "Insurance":
             print(f"""Insurance Cover  : 70%
-Insurance Amount : ₹{discount:.2f}
+Insurance Amount : Rs.{discount:.2f}
 """)
 
         elif self.patient_type == "Corporate":
             print(f"""Corporate Discount : 20%
-Discount Amount    : ₹{discount:.2f}
+Discount Amount    : Rs.{discount:.2f}
 """)
 
         else:
-            print(f"Discount         : ₹{discount:.2f}\n")
+            print(f"Discount         : Rs.{discount:.2f}\n")
 
         print(f"""----------------------------------------
-Total Hospital Bill : ₹{bill:.2f}
-Patient Payable     : ₹{final_amount:.2f}
+Total Hospital Bill : Rs.{bill:.2f}
+Patient Payable     : Rs.{final_amount:.2f}
 Bill Status         : GENERATED
 ========================================
 """)
@@ -88,6 +89,10 @@ class GeneralPatient(Hospital):
 
     def calculate_discount(self):
         return 0
+
+    def generate_bill(self):
+
+        super().generate_bill()
 
 
 class EmergencyPatient(Hospital):
