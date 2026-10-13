@@ -16,7 +16,6 @@ CREATE TABLE product (
     quantity INT
 );
 
-
 -- Question 03: Insert 10 product records
 INSERT INTO product
     (product_name, category, brand, price, quantity)
