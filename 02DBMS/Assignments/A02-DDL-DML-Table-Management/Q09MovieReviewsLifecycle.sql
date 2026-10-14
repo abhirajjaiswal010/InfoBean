@@ -1,4 +1,5 @@
 
+
 -- QNO 9: Movie Reviews Table Lifecycle
 
 -- Initial Table Creation
