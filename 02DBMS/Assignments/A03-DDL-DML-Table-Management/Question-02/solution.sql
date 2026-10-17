@@ -1,5 +1,6 @@
 CREATE DATABASE if NOT EXISTS libraryManagement;
 use libraryManagement;
+
 CREATE TABLE  if NOT EXISTS books (
     book_id INT unsigned AUTO_INCREMENT PRIMARY KEY,
     book_title VARCHAR(100) NOT NULL,
@@ -21,6 +22,8 @@ CREATE TABLE  if NOT EXISTS books (
     is_available BOOLEAN NOT NULL DEFAULT TRUE,
     description MEDIUMTEXT
 );
+
+
 CREATE TABLE if NOT EXISTS  student(
     student_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     student_name varchar(100) NOT null,
@@ -33,6 +36,7 @@ CREATE TABLE if NOT EXISTS  student(
     is_active BOOLEAN NOT NULL DEFAULT true,
     registration_date DATE NOT NULL default(current_date)
 );
+
 CREATE TABLE if NOT EXISTS  book_transactions (
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT,

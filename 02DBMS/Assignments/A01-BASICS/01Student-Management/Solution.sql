@@ -5,14 +5,14 @@
 
 -- Q1. Create and use database
 
-CREATE DATABASE school_db;
+CREATE DATABASE if NOT exists school_db;
 
 USE school_db;
 
 
 -- Q2. Create student table
 
-CREATE TABLE student (
+CREATE TABLE if NOT exists student (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     student_name VARCHAR(50),
     age INT,
@@ -24,7 +24,7 @@ CREATE TABLE student (
 
 -- Q3. Insert 10 student records
 
-INSERT INTO student (student_name, age, course, city, marks)
+INSERT ignore INTO student (student_name, age, course, city, marks)
 VALUES
     ('Rahul Sharma', 21, 'Python', 'Indore', 85),
     ('Priya Verma', 22, 'Java', 'Bhopal', 78),
@@ -46,3 +46,7 @@ DESC student;
 -- Q5. Display all student records
 
 SELECT * FROM student;
+
+
+DROP DATABASE school_db;
+SELECT "DB is deleted" AS message;
