@@ -370,7 +370,7 @@ SELECT "Find employees whose name starts with S OR contains a, department is IT 
 
 SELECT *
 FROM employees
-WHERE (name LIKE 'S%' OR name LIKE '%a%')
+WHERE (emp_name LIKE 'S%' OR emp_name LIKE '%a%')
   AND department IN ('IT', 'Finance')
   AND joining_date BETWEEN '2023-01-01' AND '2026-12-31'
   AND salary BETWEEN 40000 AND 100000
@@ -387,4 +387,4 @@ ORDER BY department ASC, salary DESC;
 
 
 
-DROP DATABASE employeeDB
+DROP DATABASE employeeDB;
