@@ -25,8 +25,7 @@ Gross Salary = Basic Salary + HRA + DA
 
 
 class Employee:
-    id=0
-    name=""
+    
 
     def __init__(self,id,name,salary,hraPercent,DaPercent):
         self.id=id

@@ -1,4 +1,4 @@
-'''
+"""
 Squares of a Sorted Array
 
 Given a sorted integer array nums in non-decreasing order, return an array
@@ -27,38 +27,36 @@ Output:
 Constraints:
 - The array is sorted in non-decreasing order.
 - 1 <= len(nums) <= 10^4
-- -10^4 <= nums[i] <= 10^4
+- -10^4 <= nums[i] <= 10^4 
 
 
-'''
+"""
 
-l=list(map(int,input("Enter : ").split()))
+l = list(map(int, input("Enter : ").split()))
 
-left=0
-right=len(l)-1
-ans=[0]*len(l)
-pos=len(l)-1
+left = 0
+right = len(l) - 1
+ans = [0] * len(l)
+pos = len(l) - 1
 
-while left<=right:
-    if abs(l[left])>abs(l[right]):
-       
-        ans[pos]=l[left]*l[left]
-       
-        left+=1
+while left <= right:
+    if abs(l[left]) > abs(l[right]):
 
+        ans[pos] = l[left] * l[left]
 
-        
+        left += 1
+
     else:
-        
-        ans[pos]=l[right]*l[right]
-        
-        right-=1
-    
-    pos-=1
+
+        ans[pos] = l[right] * l[right]
+
+        right -= 1
+
+    pos -= 1
 
 print(ans)
 
-'''
+"""
 Algorithm — Brief
 left and right pointers ko array ke dono ends par rakho.
 abs(l[left]) aur abs(l[right]) compare karo.
@@ -68,4 +66,4 @@ pos ko right se left move karo.
 Repeat until left > right.
 
 Pattern: Two Pointers
-'''
+"""

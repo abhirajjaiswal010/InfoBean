@@ -1,3 +1,4 @@
+
 row1,col1=map(int,input("Enter Row 1 And Col 1 : ").split())
 row2,col2=map(int,input("Enter Row 2 And Col 2 : ").split())
 arr1=[]
