@@ -1,0 +1,186 @@
+
+# MySQL Practice Set – GROUP BY, HAVING, ORDER BY & LIMIT
+
+## Database: Sales Management System
+
+---
+
+## Q1. Table Structure – `sales`
+
+| Column | Data Type |
+|---|---|
+| sale_id | INT |
+| customer_name | VARCHAR(50) |
+| city | VARCHAR(30) |
+| category | VARCHAR(30) |
+| product | VARCHAR(50) |
+| quantity | INT |
+| price | DECIMAL(10,2) |
+| discount | DECIMAL(10,2) |
+| sale_date | DATE |
+| payment_method | ENUM('UPI','Card','Cash','Net Banking') |
+| status | ENUM('Completed','Pending','Cancelled') |
+| customer_type | ENUM('New','Regular','Premium') |
+
+---
+
+## Sample Data
+
+```sql
+INSERT INTO sales
+(customer_name, city, category, product, quantity, price, discount, sale_date, payment_method, status, customer_type)
+VALUES
+('Rahul','Indore','Electronics','Laptop',2,60000,5000,'2026-01-05','Card','Completed','Premium'),
+('Priya','Bhopal','Electronics','Mobile',3,25000,3000,'2026-01-07','UPI','Completed','Regular'),
+('Amit','Indore','Clothing','Jeans',5,2000,500,'2026-01-10','Cash','Completed','New'),
+('Sneha','Mumbai','Beauty','Cream',8,800,400,'2026-01-12','UPI','Completed','Premium'),
+('Rohit','Pune','Electronics','Laptop',1,55000,4000,'2026-01-15','Card','Completed','Regular'),
+('Neha','Delhi','Clothing','Kurti',6,1800,600,'2026-01-17','UPI','Completed','Premium'),
+('Karan','Indore','Sports','Bat',4,3500,700,'2026-01-20','Cash','Completed','Regular'),
+('Pooja','Bhopal','Beauty','Lipstick',10,600,300,'2026-01-22','UPI','Completed','New'),
+('Vikas','Delhi','Books','SQL Book',7,900,200,'2026-01-25','Net Banking','Completed','Regular'),
+('Anjali','Mumbai','Electronics','Watch',3,7000,800,'2026-01-27','Card','Completed','Premium'),
+('Saurabh','Pune','Grocery','Rice',12,900,500,'2026-02-01','UPI','Completed','Regular'),
+('Riya','Delhi','Electronics','AC',2,45000,5000,'2026-02-03','Card','Completed','Premium'),
+('Manish','Indore','Clothing','Shirt',6,1500,300,'2026-02-05','UPI','Completed','New'),
+('Komal','Bhopal','Furniture','Chair',3,8000,1000,'2026-02-07','Cash','Completed','Premium'),
+('Deepak','Mumbai','Electronics','Speaker',5,3000,500,'2026-02-12','Card','Cancelled','Regular');
+```
+
+---
+
+# Section 1: Basic GROUP BY Practice (Q1–Q10)
+
+**Q1.** Find the total number of completed sales for each city where quantity is greater than 2. Display cities in descending order of sales count.
+
+**Q2.** Find the total quantity sold for each category where discount is greater than 300. Display highest quantity first.
+
+**Q3.** Find the total sales amount for each city for completed sales only. Display highest-selling city first.
+
+**Q4.** Find the average product price for each category where quantity is at least 3. Display categories by average price descending.
+
+**Q5.** Find the number of sales for each customer type where the order amount (quantity * price) is greater than 5000. Sort by number of sales descending.
+
+**Q6.** Find the total discount given for each city for UPI transactions. Display highest discount first.
+
+**Q7.** Find the total quantity sold through each payment method for completed transactions. Sort by total quantity descending.
+
+**Q8.** Find the average discount for each category where quantity is greater than 4. Display highest average discount first.
+
+**Q9.** Find the maximum product price for each city where the status is Completed. Sort by maximum price descending.
+
+**Q10.** Find the minimum product price for each category where discount is greater than 300. Sort by minimum price ascending.
+
+---
+
+# Section 2: HAVING Clause Practice (Q11–Q20)
+
+**Q11.** Find cities having more than 2 completed sales. Sort cities by completed sales count descending.
+
+**Q12.** Find categories having total quantity greater than 10. Sort by total quantity descending.
+
+**Q13.** Find cities having total sales greater than 50,000. Sort by total sales descending.
+
+**Q14.** Find customer types having average product price greater than 10,000. Sort by average price descending.
+
+**Q15.** Find categories having average discount greater than 400. Sort by average discount descending.
+
+**Q16.** Find payment methods having more than 2 completed transactions. Sort by transaction count descending.
+
+**Q17.** Find cities where the maximum product price is greater than 20,000. Sort by maximum price descending.
+
+**Q18.** Find categories where the minimum product price is less than 2,000. Sort by minimum price ascending.
+
+**Q19.** Find customer types where total discount is greater than 2,000. Sort by total discount descending.
+
+**Q20.** Find cities where average quantity per transaction is greater than 4. Sort by average quantity descending.
+
+---
+
+# Section 3: WHERE + GROUP BY + HAVING Practice (Q21–Q30)
+
+**Q21.** Find each city's total sales for completed UPI transactions where quantity is greater than 2. Display only cities having total sales greater than 10,000.
+
+**Q22.** Find each category's total quantity for completed transactions where discount is greater than 300. Display only categories having total quantity greater than 5.
+
+**Q23.** Find each customer type's average price for completed transactions where quantity >= 2. Display only customer types whose average price exceeds 10,000.
+
+**Q24.** Find each city's total discount for UPI transactions where quantity > 3. Display cities having total discount greater than 500.
+
+**Q25.** Find each category's total sales where payment method is UPI or Card and status is Completed. Display categories having total sales greater than 10,000.
+
+**Q26.** Find each city's transaction count for January 2026 completed transactions. Display cities having at least 2 transactions.
+
+**Q27.** Find each category's average sales amount where quantity >= 3 and status = Completed. Display categories whose average sales amount is greater than 5,000.
+
+**Q28.** Find each customer type's maximum price where payment method is Card and status is Completed. Display only customer types whose maximum price exceeds 20,000.
+
+**Q29.** Find each city's total quantity for Electronics and Clothing products where status is Completed. Display cities having total quantity greater than 5.
+
+**Q30.** Find each payment method's total sales where status is Completed and discount is greater than 400. Display payment methods having total sales greater than 20,000.
+
+---
+
+# Section 4: Multiple Conditions with HAVING (Q31–Q40)
+
+**Q31.** Find cities having more than 2 completed transactions and total sales greater than 50,000. Sort by total sales descending.
+
+**Q32.** Find categories having total quantity greater than 8 and average price greater than 2,000. Sort by total quantity descending.
+
+**Q33.** Find customer types having more than 2 transactions and total discount greater than 2,000. Sort by total discount descending.
+
+**Q34.** Find cities having average quantity greater than 3 and maximum product price greater than 20,000. Sort by average quantity descending.
+
+**Q35.** Find categories having more than 2 completed transactions and total sales greater than 20,000. Sort by total sales descending.
+
+**Q36.** Find payment methods having more than 2 completed transactions and average price greater than 10,000. Sort by average price descending.
+
+**Q37.** Find cities having total quantity greater than 8 and average discount greater than 300. Sort by total quantity descending.
+
+**Q38.** Find customer types having average price greater than 5,000 and total quantity greater than 8. Sort by total quantity descending.
+
+**Q39.** Find categories having minimum price below 2,000 and maximum price above 20,000. Sort by maximum price descending.
+
+**Q40.** Find cities having total discount greater than 1,000 and total sales greater than 30,000. Sort by total sales descending.
+
+---
+
+# Section 5: LIMIT & TOP N Practice (Q41–Q46)
+
+**Q41.** Find the top 3 cities based on total sales, considering only completed transactions with quantity greater than 1 and displaying only cities having more than 1 transaction.
+
+**Q42.** Find the top 3 categories based on total quantity where discount is greater than 300 and total quantity is greater than 5.
+
+**Q43.** Find the top 3 customer types based on average sales amount where status is Completed and transaction count is greater than 1.
+
+**Q44.** Find the top 3 cities based on total discount for UPI transactions where status is Completed and total discount is greater than 500.
+
+**Q45.** Find the top 3 categories based on total sales where quantity is greater than 2, average price is greater than 1,000, and total sales exceeds 10,000.
+
+**Q46.** Find the top 3 cities based on average order value where status is Completed, total quantity is greater than 5, and transaction count is greater than 1.
+
+---
+
+# Section 6: Ranking & Advanced GROUP BY Practice (Q47–Q49)
+
+**Q47.** Find the second-highest city based on total sales after considering only completed transactions and cities having at least 2 transactions.
+
+**Q48.** Find the third-highest category based on total quantity where quantity is greater than 2 and total discount exceeds 500.
+
+**Q49.** Find the 2nd and 3rd highest customer types based on total sales where status is Completed and average price is greater than 5,000.
+
+---
+
+# Section 7: Master-Level Combined Conditions (Q50)
+
+**Q50.** Find the top 3 cities where all the following conditions are satisfied:
+
+1. Status is Completed.
+2. Payment method is UPI or Card.
+3. Quantity is greater than 1.
+4. Number of transactions is greater than 1.
+5. Total quantity is greater than 5.
+6. Total sales is greater than 20,000.
+
+---
+
