@@ -45,7 +45,8 @@
     "094-SmallestWindowContainingCharacters.py": "pending",
     "095-SecondMostFrequentCharacter.py": "pending",
     "096-SecondMostFrequentWord.py": "pending",
-    "097-CheckEndingStringsIgnoreCase.py": "pending"
+    "097-CheckEndingStringsIgnoreCase.py": "pending",
+    "121-CheckBinaryString.py": "pending"
   },
   "lineHighlightTypes": [
     {
