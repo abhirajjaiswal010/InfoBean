@@ -40,7 +40,12 @@
   "markers": {
     "044-CheckAnagram.py": "important",
     "057-MergeStringsAlternately.py": "important",
-    "100-CheckABCNotFollowedByDot.py": "pending"
+    "092-CheckPQBalanced.py": "pending",
+    "093-WildcardStringMatch.py": "pending",
+    "094-SmallestWindowContainingCharacters.py": "pending",
+    "095-SecondMostFrequentCharacter.py": "pending",
+    "096-SecondMostFrequentWord.py": "pending",
+    "097-CheckEndingStringsIgnoreCase.py": "pending"
   },
   "lineHighlightTypes": [
     {
