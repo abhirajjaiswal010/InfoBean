@@ -145,10 +145,12 @@ AND city not IN ("mumbai","bhopal");
 
 SELECT "Find employees who joined between '2023-01-01' and '2026-12-31', belong to IT or Development, have salary greater than 50,000, and email is NOT NULL." AS Query_11;
 
-SELECT * FROM employees
-WHERE joining_date '2023-01-01' BETWEEN '2026-12-31' AND '2026-12-31'
-AND department in("it","development")
-AND  salary>50000 AND email IS NOT null
+SELECT *
+FROM employees
+WHERE joining_date BETWEEN '2023-01-01' AND '2026-12-31'
+AND department IN ('IT', 'Development')
+AND salary > 50000
+AND email IS NOT NULL;
 
 
 -- ? Q12. Find employees whose name contains the letter a, department is not HR, salary is between 35,000 and 75,000, and joining date is after '2022-06-01'.
