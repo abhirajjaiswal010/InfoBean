@@ -39,7 +39,7 @@ SELECT
 FROM project p
 JOIN employee_project ep
     ON p.project_id = ep.project_id
-GROUP BY p.project_id, p.project_name;
+GROUP BY p.project_id;
 
 
 -- Q25. Find departments having more than two employees.
