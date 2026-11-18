@@ -1,4 +1,4 @@
-
+from tabulate import tabulate
 from service.employee_service import EmployeeService
 
 
@@ -49,13 +49,20 @@ def main():
                 print("No employees found.")
 
             else:
+                header=["Emp_id","Emp_Name","Emp_Email","Department","Salary"]
+                data=[]
                 for emp in employees:
-                    print("--------------------------------")
-                    print("ID:", emp.emp_id)
-                    print("Name:", emp.emp_name)
-                    print("Email:", emp.email)
-                    print("Department:", emp.department)
-                    print("Salary:", emp.salary)
+                    data.append([
+                        emp.emp_id,
+                        emp.emp_name,
+                        emp.email,
+                        emp.department,
+                        emp.salary
+
+
+                    ])
+                
+                print(tabulate(data,headers=header,tablefmt="rounded_grid"))
 
         # 3. READ Employee By ID
         elif choice == "3":
